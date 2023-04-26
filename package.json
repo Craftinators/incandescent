@@ -1,0 +1,51 @@
+{
+	"name": "incandescence",
+	"version": "0.1.0-beta",
+	"description": "A typescript translation of the .NET library spectre.console",
+	"scripts": {
+		"test": "vitest run",
+		"build": "tsup",
+		"lint": "prettier --check . && eslint src --ext .mjs,.js,.ts --format=pretty",
+		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty"
+	},
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		"import": "./dist/index.mjs",
+		"require": "./dist/index.js",
+		"types": "./dist/index.d.ts"
+	},
+	"directories": {
+		"lib": "src",
+		"test": "__tests__"
+	},
+	"files": [
+		"dist"
+	],
+	"author": "Craftinators",
+	"license": "Apache-2.0",
+	"keywords": [
+		"nodejs",
+		"npm",
+		"typescript"
+	],
+	"homepage": "https://github.com/Craftinators/incandescence#readme",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Craftinators/incandescence.git"
+	},
+	"bugs": {
+		"url": "https://github.com/Craftinators/incandescence/issues"
+	},
+	"devDependencies": {
+		"@vitest/coverage-c8": "^0.30.1",
+		"eslint": "^8.39.0",
+		"eslint-config-neon": "^0.1.42",
+		"eslint-formatter-pretty": "^5.0.0",
+		"prettier": "^2.8.8",
+		"tsup": "^6.7.0",
+		"typescript": "^5.0.4",
+		"vitest": "^0.30.1"
+	}
+}
