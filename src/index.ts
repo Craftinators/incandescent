@@ -1,1 +1,1 @@
-console.log("\u001B[43mHello World!");
+export * from "./color";
