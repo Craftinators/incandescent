@@ -1,5 +1,5 @@
 {
-	"name": "incandescent",
+	"name": "@craftinators/incandescent",
 	"version": "0.1.0-beta",
 	"description": "A typescript translation of the .NET library spectre.console",
 	"scripts": {
