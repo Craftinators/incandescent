@@ -14,7 +14,12 @@ jobs:
         with:
           node-version: "16"
           registry-url: "https://npm.pkg.github.com"
+      - uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          run_install: true
       - run: pnpm install --frozen-lockfile
       - run: pnpm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
