@@ -1,4 +1,4 @@
-export class Color {
+class Color {
 	public constructor(public r: number, public g: number, public b: number) {}
 
 	public static readonly black: Color = new Color(0, 0, 0);
@@ -18,7 +18,13 @@ export class Color {
 		);
 	}
 
+	public static random(): Color {
+		return new Color(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256));
+	}
+
 	public toHEX(): string {
 		return this.r.toString(16) + this.g.toString(16) + this.b.toString(16);
 	}
 }
+
+export { Color };
