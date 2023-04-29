@@ -7,7 +7,8 @@
 		"build": "tsup",
 		"lint": "prettier --check . && eslint src --ext .mjs,.js,.ts --format=pretty",
 		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty",
-		"ci": "pnpm format && pnpm lint && pnpm build && pnpm test"
+		"ci": "pnpm format && pnpm lint && pnpm build && pnpm test",
+		"postinstall": "husky install"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -44,6 +45,7 @@
 		"eslint": "^8.39.0",
 		"eslint-config-neon": "^0.1.42",
 		"eslint-formatter-pretty": "^5.0.0",
+		"husky": "^8.0.3",
 		"prettier": "^2.8.8",
 		"tsup": "^6.7.0",
 		"typescript": "^5.0.4",
