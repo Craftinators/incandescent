@@ -8,7 +8,7 @@
 		"lint": "prettier --check . && eslint src --ext .mjs,.js,.ts --format=pretty",
 		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty",
 		"pipeline": "pnpm format && pnpm lint && pnpm build && pnpm test",
-		"prepack": "pnpm lint && pnpm test"
+		"prepack": "pnpm pipeline"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
