@@ -19,7 +19,7 @@ jobs:
           version: latest
           run_install: true
       - run: pnpm install --frozen-lockfile
-      - run: pnpm publish
+      - run: pnpm publish --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
