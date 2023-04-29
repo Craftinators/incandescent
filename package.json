@@ -1,6 +1,6 @@
 {
 	"name": "@craftinators/incandescent",
-	"version": "0.1.0-beta",
+	"version": "0.1.1-beta",
 	"description": "A typescript translation of the .NET library spectre.console",
 	"scripts": {
 		"test": "tsc --noEmit && vitest run",
