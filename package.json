@@ -1,14 +1,15 @@
 {
-	"name": "@craftinators/incandescent",
+	"name": "incandescent",
 	"version": "0.1.1-beta",
 	"description": "A typescript translation of the .NET library spectre.console",
+	"private": false,
 	"scripts": {
 		"test": "tsc --noEmit && vitest run",
 		"build": "tsup",
 		"lint": "prettier --check . && eslint src --ext .mjs,.js,.ts --format=pretty",
 		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty",
-		"pipeline": "npm run format && npm run lint && npm run build && npm run test",
-		"prepack": "npm run pipeline"
+		"pipeline": "pnpm format && pnpm lint && pnpm build && pnpm test",
+		"prepack": "pnpm pipeline"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
