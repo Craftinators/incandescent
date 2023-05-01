@@ -1,6 +1,6 @@
 {
 	"name": "incandescent",
-	"version": "0.1.1-beta",
+	"version": "0.1.1-alpha",
 	"description": "A typescript translation of the .NET library spectre.console",
 	"private": false,
 	"scripts": {
