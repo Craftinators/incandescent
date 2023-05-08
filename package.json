@@ -8,7 +8,8 @@
     "test": "turbo run test --parallel",
     "lint": "turbo run lint --parallel",
     "format": "turbo run format --parallel",
-    "postinstall": "husky install"
+    "postinstall": "husky install",
+    "create-pkg": "turbo run build --filter=@incandescent/scripts && node -e 'require(\"./packages/scripts/dist/index.js\").createPkg()'"
   },
   "author": "Craftinators",
   "license": "Apache-2.0",
@@ -29,7 +30,9 @@
     "packages/*"
   ],
   "devDependencies": {
+    "eslint": "^8.39.0",
     "eslint-config-neon": "^0.1.42",
+    "eslint-formatter-pretty": "^5.0.0",
     "husky": "^8.0.3",
     "tsup": "^6.7.0",
     "turbo": "^1.9.3",

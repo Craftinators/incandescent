@@ -1,14 +1,12 @@
 {
-	"name": "incandescent",
-	"version": "0.2.0-mono",
-	"description": "A typescript translation of the .NET library spectre.console",
-	"private": false,
+	"name": "@incandescent/scripts",
+	"version": "0.1.0",
+	"description": "A set of scripts that we use for our workflows",
+	"private": true,
 	"scripts": {
-		"test": "tsc --noEmit && vitest run",
 		"build": "tsup",
 		"lint": "prettier --check . && eslint src --ext .mjs,.js,.ts --format=pretty",
-		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty",
-		"prepack": "pnpm lint && pnpm test"
+		"format": "prettier --write . && eslint src --ext .mjs,.js,.ts --fix --format=pretty"
 	},
 	"main": "./dist/index.js",
 	"module": "./dist/index.mjs",
@@ -19,8 +17,7 @@
 		"types": "./dist/index.d.ts"
 	},
 	"directories": {
-		"lib": "src",
-		"test": "__tests__"
+		"lib": "src"
 	},
 	"files": [
 		"dist"
@@ -42,13 +39,14 @@
 	},
 	"devDependencies": {
 		"@types/node": "^18.16.3",
-		"@vitest/coverage-c8": "^0.30.1",
 		"eslint": "^8.39.0",
 		"eslint-config-neon": "^0.1.42",
 		"eslint-formatter-pretty": "^5.0.0",
 		"prettier": "^2.8.8",
 		"tsup": "^6.7.0",
-		"typescript": "^5.0.4",
-		"vitest": "^0.30.1"
+		"typescript": "^5.0.4"
+	},
+	"dependencies": {
+		"incandescent": "workspace:0.2.0-mono"
 	}
 }
