@@ -1,5 +1,5 @@
 class Color {
-	public constructor(public r: number, public g: number, public b: number) {}
+	public constructor(public readonly r: number, public readonly g: number, public readonly b: number) {}
 
 	public static readonly black: Color = new Color(0, 0, 0);
 
@@ -11,6 +11,8 @@ class Color {
 	}
 
 	public static fromHEX(hex: string): Color {
+		if (!/[\dA-Fa-f]{6}/g.test(hex)) throw new Error(`Invalid hex format "${hex}"`);
+		if (/#[\dA-Fa-f]{6}/g.test(hex)) hex = hex.slice(1);
 		return new Color(
 			Number.parseInt(hex.slice(0, 2), 16),
 			Number.parseInt(hex.slice(2, 4), 16),
