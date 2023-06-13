@@ -17,4 +17,8 @@ describe("color", () => {
 	test("GIVEN RGB color EXPECT to equal HEX", () => {
 		expect(new Color(231, 152, 72).toHEX()).toBe("e79848");
 	});
+
+	test("GIVEN color EXPECT exact color to be equal", () => {
+		expect(Color.white.equals(Color.white)).toBe(true);
+	});
 });

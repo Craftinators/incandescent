@@ -27,6 +27,10 @@ class Color {
 	public toHEX(): string {
 		return this.r.toString(16) + this.g.toString(16) + this.b.toString(16);
 	}
+
+	public equals(other: Color): boolean {
+		return this.r === other.r && this.g === other.g && this.b === other.b;
+	}
 }
 
 export { Color };
