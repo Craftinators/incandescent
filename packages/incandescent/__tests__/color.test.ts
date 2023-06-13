@@ -10,6 +10,8 @@ describe("color", () => {
 
 	test("GIVEN HEX code EXPECT to equal RGB", () => {
 		expect(Color.fromHEX("b148c4")).toStrictEqual(new Color(177, 72, 196));
+		expect(Color.fromHEX("#b148c4")).toStrictEqual(new Color(177, 72, 196));
+		expect(() => Color.fromHEX("blah")).toThrowError();
 	});
 
 	test("GIVEN RGB color EXPECT to equal HEX", () => {
