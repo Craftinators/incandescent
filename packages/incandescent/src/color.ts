@@ -5,11 +5,6 @@ class Color {
 
 	public static readonly white: Color = new Color(255, 255, 255);
 
-	public get grayscale(): Color {
-		const gray = Math.round(0.299 * this.r + 0.587 * this.g + 0.114 * this.b);
-		return new Color(gray, gray, gray);
-	}
-
 	public static fromHEX(hex: string): Color {
 		if (!/[\dA-Fa-f]{6}/g.test(hex)) throw new Error(`Invalid hex format "${hex}"`);
 		if (/#[\dA-Fa-f]{6}/g.test(hex)) hex = hex.slice(1);
@@ -22,6 +17,11 @@ class Color {
 
 	public static random(): Color {
 		return new Color(Math.floor(Math.random() * 256), Math.floor(Math.random() * 256), Math.floor(Math.random() * 256));
+	}
+
+	public grayscale(): Color {
+		const gray = Math.round(0.299 * this.r + 0.587 * this.g + 0.114 * this.b);
+		return new Color(gray, gray, gray);
 	}
 
 	public toHEX(): string {
