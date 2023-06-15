@@ -5,7 +5,7 @@ import { Color } from "../src";
 
 describe("color", () => {
 	test("GIVEN white color EXPECT to equal grayscaled white color", () => {
-		expect(Color.white).toStrictEqual(Color.white.grayscale);
+		expect(Color.white).toStrictEqual(Color.white.grayscale());
 	});
 
 	test("GIVEN HEX code EXPECT to equal RGB", () => {
@@ -19,6 +19,6 @@ describe("color", () => {
 	});
 
 	test("GIVEN color EXPECT exact color to be equal", () => {
-		expect(Color.white.equals(Color.white)).toBe(true);
+		expect(Color.white.equals(new Color(255, 255, 255))).toBe(true);
 	});
 });
