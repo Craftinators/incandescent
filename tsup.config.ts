@@ -1,5 +1,6 @@
 import { defineConfig } from "tsup";
 
+// noinspection SpellCheckingInspection
 export function createTsupConfig() {
 	return defineConfig({
 		entry: ["src/index.ts"],
