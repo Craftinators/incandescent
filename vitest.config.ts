@@ -9,7 +9,7 @@ export default defineConfig({
 			enabled: true,
 			all: true,
 			reporter: ["text", "lcov", "cobertura"],
-			provider: "c8",
+			provider: "istanbul",
 			include: ["src"],
 			exclude: ["**/*.{interface,type,d}.ts", "**/index.{js,ts}"],
 		},
