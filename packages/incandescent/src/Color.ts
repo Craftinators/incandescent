@@ -1,9 +1,13 @@
+import { clamp } from "./Util";
+
 class Color {
-	public constructor(public readonly r: number, public readonly g: number, public readonly b: number) {}
-
-	public static readonly black: Color = new Color(0, 0, 0);
-
-	public static readonly white: Color = new Color(255, 255, 255);
+	public constructor(
+		public r: number,
+		public g: number,
+		public b: number,
+	) {
+		this.validate();
+	}
 
 	public static fromHEX(hex: string): Color {
 		if (!/[\dA-Fa-f]{6}/g.test(hex)) throw new Error(`Invalid hex format "${hex}"`);
@@ -30,6 +34,13 @@ class Color {
 
 	public equals(other: Color): boolean {
 		return this.r === other.r && this.g === other.g && this.b === other.b;
+	}
+
+	private validate(): void {
+		// Map all components to [0, 255] interval
+		this.r = clamp(Math.trunc(this.r), 0, 255);
+		this.g = clamp(Math.trunc(this.g), 0, 255);
+		this.b = clamp(Math.trunc(this.b), 0, 255);
 	}
 }
 
