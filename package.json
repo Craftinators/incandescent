@@ -8,8 +8,7 @@
     "test": "turbo run test --parallel",
     "lint": "turbo run lint --parallel",
     "format": "turbo run format --parallel",
-    "postinstall": "husky install",
-    "create-pkg": "turbo run build --filter=@incandescent/scripts && node -e 'require(\"./packages/scripts/dist/index.js\").createPkg()'"
+    "postinstall": "husky install"
   },
   "author": "Craftinators",
   "license": "Apache-2.0",
