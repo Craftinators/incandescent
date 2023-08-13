@@ -1,0 +1,61 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["pnpm-lock.yaml"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["../../tsconfig.json", "../../tsup.config.ts", "src/**/*.ts", "tsconfig.json", "tsup.config.ts"],
+      "outputs": ["dist/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "../../tsconfig.json",
+        "../../vitest.config.ts",
+        "__tests_/**/*.ts",
+        "src/**/*.ts",
+        "src/**/*.js",
+        "tsconfig.json"
+      ],
+      "outputs": ["coverage/**"]
+    },
+    "lint": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "../../.eslintrc.json",
+        "../../.prettierrc.json",
+        "../../tsconfig.json",
+        "../../tsconfig.eslint.json",
+        "src/**/*.ts",
+        ".eslintignore",
+        ".eslintrc.json",
+        ".prettierignore",
+        ".prettierrc.js",
+        "tsconfig.json",
+        "tsconfig.eslint.json",
+        "tsup.config.ts",
+        "vite.config.ts"
+      ],
+      "outputs": []
+    },
+    "format": {
+      "dependsOn": ["^build"],
+      "inputs": [
+        "../../.eslintrc.json",
+        "../../.prettierrc.json",
+        "../../tsconfig.json",
+        "../../tsconfig.eslint.json",
+        "src/**/*.ts",
+        ".eslintignore",
+        ".eslintrc.json",
+        ".prettierignore",
+        ".prettierrc.js",
+        "tsconfig.json",
+        "tsconfig.eslint.json",
+        "tsup.config.ts",
+        "vite.config.ts"
+      ],
+      "outputs": []
+    }
+  }
+}

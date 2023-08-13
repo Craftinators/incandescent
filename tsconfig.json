@@ -36,6 +36,5 @@
 		"lib": ["ESNext", "DOM"],
 		"target": "ESNext",
 		"useDefineForClassFields": true
-	},
-	"include": ["src/**/*.ts"]
+	}
 }
