@@ -1,0 +1,38 @@
+# Ignore artifacts and build output
+node_modules/
+dist/
+build/
+
+# Ignore configuration files and lockfiles
+*.config.js
+*.config.cjs
+*.config.mjs
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Ignore transpiled files
+*.min.js
+*.min.css
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore logs
+*.log
+
+# Ignore custom directories if any
+coverage/
+out/
+public/
+
+# Ignore Vite files (if using Vite)
+.vite/
+
+# Ignore eslint cache
+.eslintcache
+
+# Ignore other Prettier configuration
+.prettierignore
+.prettierrc
